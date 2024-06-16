@@ -13,9 +13,9 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.get("/game",(req, res)=>{
-    console.log("hello");
-    res.render('project');
+// Route to render embedded.ejs
+app.get("/game", (req, res) => {
+    res.render('game');
 });
 
 
@@ -33,10 +33,6 @@ app.get('/project', (req, res) => {
 });
 
 
-// Route to render embedded.ejs
-app.get("/game", (req, res) => {
-    res.render('game');
-});
 
 
 

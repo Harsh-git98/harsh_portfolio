@@ -10,13 +10,19 @@ body {
 
 .container {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items:center;
 }
 
 h1 {
     margin-bottom: 20px;
     color:#97c2cf;
 }
-
+p{
+    color:white;
+}
 .board {
     display: grid;
     grid-template-columns: repeat(3, 90px);

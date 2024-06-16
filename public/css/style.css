@@ -529,7 +529,7 @@ input::placeholder {
 }
 
 textarea::placeholder {
-  color: rgb(64, 73, 199);
+  color:  rgb(29, 52, 94);
 }
 
 input,textarea {
@@ -547,9 +547,10 @@ textarea{
 
 button {
   color: white;
-  margin-top: 20px;
+  margin:20px auto;
   background: #1DA1F2;
   height: 40px;
+  width:80%;
   border-radius: 20px;
   cursor: pointer;
   font-weight: 900;
@@ -633,7 +634,8 @@ button:hover {
 .skillhead{
   font-style: italic;
   color: #91c6f1;
-  margin-top:20vh;
+  margin-top:10vh;
+  margin-bottom: 5vh;
   font-size: 5vh;
 }
 
@@ -672,7 +674,125 @@ iframe-no-scrollbar {
   border-radius: 20px;
   overflow: hidden;
 }
+iframe{
+  min-height: 70vh;
+  max-width: 600px;
+}
 .see-project{
   margin-bottom: 5vh;
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.animated_footer_area {
+
+  background-color: rgba(255, 255, 255, 0); 
+  
+  position: relative;
+  z-index: -3;
+  overflow-x: hidden;
+  padding: 0;
+  height: 266px; /* Adjust height to match the height of the animations */
+}
+
+.animated_footer_area .footer_bg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 266px; /* Adjust height to match the height of the animations */
+  background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigB8iI5tb8WSVBuVUGc9UjjB8O0708X7Fdic_4O1LT4CmLHoiwhanLXiRhe82yw0R7LgACQ2IhZaTY0hhmGi0gYp_Ynb49CVzfmXtYHUVKgXXpWvJ_oYT8cB4vzsnJLe3iCwuzj-w6PeYq_JaHmy_CoGoa6nw0FBo-2xLdOPvsLTh_fmYH2xhkaZ-OGQ/s16000/footer_bg.png") no-repeat center 0;
+}
+
+.footer_bg_one {
+  background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia0PYPxwT5ifToyP3SNZeQWfJEWrUENYA5IXM6sN5vLwAKvaJS1pQVu8mOFFUa_ET4JuHNTFAxKURFerJYHDUWXLXl1vDofYXuij45JZelYOjEFoCOn7E6Vxu0fwV7ACPzArcno1rYuVxGB7JY6G7__e4_KZW4lTYIaHSLVaVLzklZBLZnQw047oq5-Q/s16000/volks.gif") no-repeat center center;
+  width: 330px;
+  height: 105px;
+  background-size: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  animation: moveOne 18s linear infinite;
+}
+
+.footer_bg_two {
+  background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyLGwEUVwPK6Vi8xXMymsc-ZXVwLWyXhogZxbcXQYSY55REw_0D4VTQnsVzCrL7nsyjd0P7RVOI5NKJbQ75koZIalD8mqbMquP20fL3DxsWngKkOLOzoOf9sMuxlbyfkIBTsDw5WFUj-YJiI50yzgVjF8cZPHhEjkOP_PRTQXDHEq8AyWpBiJdN9SfQA/s16000/cyclist.gif") no-repeat center center;
+  width: 88px;
+  height: 100px;
+  background-size: 100%;
+  bottom: 0;
+  left: 38%;
+  position: absolute;
+  animation: moveTwo 30s linear infinite;
+}
+@media (max-width: 500px) {
+  .animated_footer_area {
+    background: rgb(31,21,189);
+background: linear-gradient(180deg, rgba(31,21,189,1) 0%, rgba(49,42,173,1) 0%, rgba(36,36,193,1) 0%, rgba(24,72,255,1) 39%, rgba(0,212,255,0.23786407766990292) 100%);
+
+       /* Adjust the transparency (0 to 1) as needed */
+  }
+}
+@keyframes moveOne {
+  0% { left: -25%; }
+  100% { left: 100%; }
+}
+
+@keyframes moveTwo {
+  0% { left: -25%; }
+  100% { left: 100%; }
 }

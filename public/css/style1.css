@@ -97,13 +97,15 @@ path {
 
 .timeline {
     margin: 1vw auto;
-    padding: 20vw;
+   
   }
-
+.outer{
+  height: 100%;
+}
 /* card2 container */
 .card2 {
     position: relative;
-    max-width: 50vw;
+    max-width: 70vw;
     margin: auto;
     display: flex;
     flex-direction: column;

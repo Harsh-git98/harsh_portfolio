@@ -21,14 +21,19 @@ function playerTurn(index) {
         board[index] = currentPlayer;
         cells[index].innerText = currentPlayer;
         if (checkWin(currentPlayer)) {
-            message.innerText = ` Yay!! Player ${currentPlayer} wins!`;
-            gameOver = true;
+            if(currentPlayer === "X"){
+                message.innerText = "Congo!!, But system says You Cheated..";
+                gameOver = true;
+            } else {
+                message.innerText = "I promise not to brag about your loss !";
+                gameOver = true;
+            }
         } else if (checkDraw()) {
-            message.innerText = "It's a draw!";
+            message.innerText = "It's a draw. No chance to win !";
             gameOver = true;
         } else {
             currentPlayer = currentPlayer === "X" ? "O" : "X";
-            message.innerText = `Your turn`;
+            message.innerText = "Your turn ";
             if (currentPlayer === "O") {
                 computerTurn();
             }
@@ -37,11 +42,56 @@ function playerTurn(index) {
 }
 
 function computerTurn() {
-    let index = Math.floor(Math.random() * 9);
-    while (board[index] !== "") {
-        index = Math.floor(Math.random() * 9);
+    let bestScore = -Infinity;
+    let move;
+    for (let i = 0; i < board.length; i++) {
+        if (board[i] === "") {
+            board[i] = "O";
+            let score = minimax(board, 0, false);
+            board[i] = "";
+            if (score > bestScore) {
+                bestScore = score;
+                move = i;
+            }
+        }
     }
-    playerTurn(index);
+    playerTurn(move);
+}
+
+function minimax(board, depth, isMaximizing) {
+    if (checkWin("O")) {
+        return 10 - depth;
+    }
+    if (checkWin("X")) {
+        return depth - 10;
+    }
+    if (checkDraw()) {
+        return 0;
+    }
+
+    if (isMaximizing) {
+        let bestScore = -Infinity;
+        for (let i = 0; i < board.length; i++) {
+            if (board[i] === "") {
+                board[i] = "O";
+                let score = minimax(board, depth + 1, false);
+                board[i] = "";
+                bestScore = Math.max(score, bestScore);
+            }
+        }
+        return bestScore;
+    } else {
+        let bestScore = Infinity;
+        for (let i = 0; i < board.length; i++) {
+            if (board[i] === "") {
+                board[i] = "X";
+                let score = minimax(board, depth + 1, true);
+                board[i] = "";
+                bestScore = Math.min(score, bestScore);
+            }
+        }
+        return bestScore;
+    }
 }
 
 function checkWin(player) {
@@ -60,7 +110,7 @@ function checkDraw() {
 
 function reset() {
     board = ["", "", "", "", "", "", "", "", ""];
-    currentPlayer = "O";
+    currentPlayer = "X";
     gameOver = false;
     cells.forEach(cell => {
         cell.innerText = "";

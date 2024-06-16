@@ -52,7 +52,7 @@ app.post("/",function(req,res)
         service:'gmail',
         auth:{
             user: 'shriharshranjangupta@gmail.com',
-            pass:'emmc axzp ztyk eaik',//password
+            pass: PASSWORDING,//password
 
         }
     })

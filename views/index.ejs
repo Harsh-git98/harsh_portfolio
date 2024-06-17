@@ -13,6 +13,7 @@
         display: none;
       }
     </style>
+    <script src="/js/paralax.js"></script>
 </head>
 <body>
 
@@ -134,25 +135,25 @@
                   </div>
                   <div class="card2">
                     <div class="info">
-                      <h3 class="title1">CP Enthusiasts</h3>
+                      <h3 class="title1">COMPETITIVE PROGRAMMING</h3>
                       <p>Since my first year of college, I've immersed myself in competitive programming, participating in over 30 contests to date. From algorithms to problem-solving, I've honed my skills relentlessly. Ready for any coding challenge, I thrive in the world of problem-solving and logical thinking.</p>
                     </div>
                   </div>
                   <div class="card2">
                     <div class="info">
-                      <h3 class="title1">Graduating</h3>
+                      <h3 class="title1">PRE-FINAL YEAR</h3>
                       <p>Currently pursuing B.Tech in Information Technology at Indian Institute of Engineering Science and Technology, Shibpur. Passionately diving into the world of technology, shaping the future with innovation and creativity.</p>
                     </div>
                   </div>
                   <div class="card2">
                     <div class="info">
-                      <h3 class="title1">Higher Secondary Education</h3>
+                      <h3 class="title1">HIGHER SECONDARY EDUCATION</h3>
                       <p>I completed my Higher Secondary Education at HD Jain College in 2022 with an impressive aggregate of 89.8%. Achieving a top 3% ranking in JEE MAINS 2022 fuels my passion for excellence in engineering. </p>
                     </div>
                   </div>
                   <div class="card2">
                     <div class="info">
-                      <h3 class="title1">Secondary Education</h3>
+                      <h3 class="title1">SECONDARY EDUCATION</h3>
                       <p>I completed my secondary education at DAV Public School in 2020 with an outstanding 95.8%. Beyond academics, I tutor peers at my level in tuition classes, fostering a supportive and collaborative learning environment. </p>
                     </div>
                   </div>
@@ -314,34 +315,36 @@
 #loading-screen{
   text-align: center;
   color:aliceblue;
-  margin-top :20vw ;
+  margin-top :20vh ;
+  font-size: larger;
   margin-bottom: none;
 
-}
+}/* HTML: <div class="loader"></div> */
 .loader {
-  width: 50px;
-  padding: 8px;
- 
+  width: 45px;
   margin: 10vw auto;
+
   aspect-ratio: 1;
-  border-radius: 50%;
-  background: #25b09b;
-  --_m: 
-    conic-gradient(#0000 10%,#000),
-    linear-gradient(#000 0 0) content-box;
-  -webkit-mask: var(--_m);
-          mask: var(--_m);
-  -webkit-mask-composite: source-out;
-          mask-composite: subtract;
-  animation: l3 1s infinite linear;
+  --c:no-repeat linear-gradient(#ffffff 0 0);
+  background: var(--c), var(--c), var(--c);
+  animation: 
+    l18-1 1s infinite,
+    l18-2 1s infinite;
 }
-@keyframes l3 {to{transform: rotate(1turn)}}
+@keyframes l18-1 {
+ 0%,100% {background-size:20% 100%}
+ 33%,66% {background-size:20% 20%}
+}
+@keyframes l18-2 {
+ 0%,33%   {background-position: 0    0,50% 50%,100% 100%}
+ 66%,100% {background-position: 100% 0,50% 50%,0    100%}
+}
 </style>
 
 
 
 
 
-    <script src="/js/paralax.js"></script>
+    
 </body>
 </html>

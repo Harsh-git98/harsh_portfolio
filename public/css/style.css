@@ -359,10 +359,9 @@ p {
 .navy{
     font-size: 8px;
     text-decoration: none;
-    margin: 5px;
-    color: aliceblue;
+       color: aliceblue;
    
-    padding: 5px;
+    
    
 
 }
@@ -484,8 +483,8 @@ input {
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;
-  background: #0c4068;
-  box-shadow: 14px 14px 20px 5px #16324e, -7px -7px 10px rgb(41, 2, 2);
+  background: #192953;
+  box-shadow: 14px 14px 20px 5px #192953, -7px -7px 10px rgb(41, 2, 2);
 }
 
 
@@ -525,7 +524,7 @@ label:nth-of-type(2) {
 }
 
 input::placeholder {
-  color: rgb(29, 52, 94);
+  color: rgb(29, 37, 94);
 }
 
 textarea::placeholder {
@@ -533,7 +532,7 @@ textarea::placeholder {
 }
 
 input,textarea {
-  background: #72afdd;
+  background: #68aee4;
   padding: 10px;
   padding-left: 20px;
   height: 50px;

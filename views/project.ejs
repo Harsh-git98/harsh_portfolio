@@ -2,39 +2,139 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body{
-            background-color: rgb(71, 71, 207);
-        }
-       
-        h1{
+        body {
+            font-family: 'Poppins', sans-serif;
            
-           text-align: center;
-            position: relative;
-            color:rgb(255, 255, 255);
-        }
-        .err{
-            margin: 10vh auto;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            height: 60vw;
-
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
-        .git{
 
+        h1 {
+            margin-top: 20vw;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.3s;
+            color:#ffffff;
+        }
+        .project-main{
+            width:90vw;
+        }
+
+
+        .project-container {
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            height: 5vw;
+            gap: 20px;
+            max-width: 600px;
+            width: 100%;
+            margin: 20px auto;
         }
-        a{
+
+        .project-card {
+            background: #192953;
+
+            border-radius: 12px;
+            box-shadow: 10px 10px 10px rgb(28, 33, 108);
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            transform: scale(0.9);
+            transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+            opacity: 0;
+        }
+
+        .project-card:nth-child(4n+1) {
+            transform: translateX(100px);
+        }
+
+        .project-card:nth-child(4n+2) {
+            transform: translateX(-100px);
+        }
+
+        .project-card:nth-child(4n+3) {
+            transform: translateX(-100px);
+        }
+
+        .project-card:nth-child(4n+4) {
+            transform: translateX(100px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit:cover;
+        }
+
+        .project-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .project-content h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: aqua;
+        }
+
+        .project-content p {
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: aliceblue;
+        }
+
+        .project-content a {
+            display: inline-block;
+            margin: 5px 10px;
+            padding: 10px 20px;
+            border: 2px solid #ffffff;
+            border-radius: 24px;
             text-decoration: none;
-            color: aquamarine;
+            color: #ffffff;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .project-content a:hover {
+            background: #ffffff;
+            color: #121212;
+        }
+        .animated_footer_area{
+            z-index: 20;
+            width: 100vw;
+        }
+        p{
+            text-align: center;
+            z-index: 25;
+            color: aliceblue;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
+
     <div class="blurr1"></div>
     <div class="navbar">
         <img src="logo.png" alt="logo" class="logo">
@@ -42,15 +142,127 @@
     <nav >
          <a href="/"class="navy">Home</a>
         <a href="/project"class="navy">Project</a>
-        <a href="#"class="navy">Resume</a>
+        <a href="https://drive.google.com/file/d/1PZ39S0pLs5NrtMxn0yXznxhykWRKvgWb/view?usp=sharing"class="navy">Resume</a>
     </nav>
-    </div>
-    <h1> <img src="/img/error-404.png" alt="logo" class="err">
-    </h1>
-    <h1><a href="https://github.com/Harsh-git98"> <img src="/img/github.png" alt="logo" class="git"></a>
-    </h1>
+</div>
+<div class="paralax">
+    <div class="paralax-item p-item1"></div>
+</div>
+<div class="project-main">
     
+    <h1>My Projects</h1>
+    <p>© Harsh Ranjan 2024. All rights reserved. </p>
 
+    <div class="project-container">
+        <div class="project-card">
+            <img src="/img/portfolio.png" alt="Project 1">
+            <div class="project-content">
+                <h2>PortFolio Website</h2>
+                <p>A simple Portfolio Website Made Using express javascript.</p>
+                <a href="https://github.com/Harsh-git98/harsh_portfolio" target="_blank">GitHub</a>
+                <a href="/" target="_blank">Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="/img/rocket.png" alt="Project 2">
+            <div class="project-content">
+                <h2>Rocket GPT</h2>
+                <p>A simple website that help users to get prompt Optimised answer by just click of button.</p>
+                <a href="https://github.com/Harsh-git98/rocket-gpt" target="_blank">GitHub</a>
+                <a href="https://github.com/Harsh-git98/rocket-gpt" target="_blank">Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="/img/todo.png" alt="Project 3">
+            <div class="project-content">
+                <h2>To-Do-List</h2>
+                <p>A simple Webapp to List down things To-Do and instantly remove it. Made on Express and Node.</p>
+                <a href="https://github.com/Harsh-git98/to-do-app" target="_blank">GitHub</a>
+                <a href="https://my-to-do-lister.onrender.com/todo" target="_blank">Demo</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="/img/login.png" alt="Project 2">
+            <div class="project-content">
+                <h2>login - Signup</h2>
+                <p>This is simple login signup page that can be used in any other websites. It is full MERN STACK Project</p>
+                <a href="https://github.com/Harsh-git98/Mern_login_register" target="_blank">GitHub</a>
+                <a href="https://login-signup-1vgr.onrender.com/register" target="_blank">Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="/img/anony.png" alt="Project 3">
+            <div class="project-content">
+                <h2>Anonymessager</h2>
+                <p>Single Page Ejs WebApp to Send me message Anonymously.</p>
+                <a href="https://github.com/Harsh-git98/anonymessager" target="_blank">GitHub</a>
+                <a href="https://anonymessager.onrender.com/" target="_blank">Demo</a>
+            </div>
+        </div>
+
+
+        
+        
+        <!-- Add more project cards as needed -->
+    </div>
     
+</div>
+<footer class="animated_footer_area">
+    <p class="socials">"Code is like humor. When you have to explain it, it's bad." — Cory House </p>
+    <div class="footer_bg">
+        <div class="footer_bg_one"></div>
+        <div class="footer_bg_two"></div>
+    </div>
+    
+</footer>
+<p>© Harsh Ranjan 2024. All rights reserved. </p>
+                
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectCards = document.querySelectorAll('.project-card');
+            const options = {
+                threshold: 0.35
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.transitionDelay = `${index * 0.4}s`;
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0) translateX(0)';
+                    } else {
+                        entry.target.style.opacity = 0;
+                        if (index % 4 === 0) {
+                            entry.target.style.transform = 'translatex(25vw)';
+                        } else if (index % 4 === 1) {
+                            entry.target.style.transform = 'translateX(-25vw)';
+                        } else if (index % 4 === 2) {
+                            entry.target.style.transform = 'translateX(25vw)';
+                        } else {
+                            entry.target.style.transform = 'translateX(-25vw)';
+                        }
+                    }
+                });
+            }, options);
+
+            projectCards.forEach(card => {
+                observer.observe(card);
+            });
+
+            projectCards.forEach(card => {
+                card.addEventListener('mouseover', () => {
+                    card.style.transition = 'transform 0.3s, box-shadow 0.3s';
+                    card.style.transform = 'scale(1.05)';
+                    card.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.5)';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'scale(1)';
+                    card.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

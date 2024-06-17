@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 
 .card {
-  background: #133146;
+  background: #192953;
   border-radius: 4px;
   margin: 5vw auto;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.5);
@@ -302,9 +302,4 @@ path {
 .project{
   height: 80vh;
   display: block;
-}
-.message{
- margin-top: 20vh;
-
-
 }

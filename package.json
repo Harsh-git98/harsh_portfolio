@@ -1,18 +1,35 @@
 {
  
   "name": "harsh_portfolio",
+ 
   "version": "1.0.0",
+ 
   "description": "portfolio website",
+ 
   "main": "index.js",
-  "scripts": {
-    
-  },
+ 
+  "scripts": {},
+ 
   "author": "harsh ranjan",
+ 
   "license": "ISC",
+ 
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "ejs": "^3.1.10",
-    "express": "^4.19.2",
-    "nodemailer": "^6.9.13"
+ 
+   
+  "body-parser": "^1.20.2",
+ 
+   
+  "dotenv": "^16.4.5",
+ 
+   
+  "ejs": "^3.1.10",
+ 
+   
+  "express": "^4.19.2",
+ 
+   
+  "nodemailer": "^6.9.13"
+ 
   }
 }

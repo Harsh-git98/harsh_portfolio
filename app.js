@@ -4,6 +4,9 @@ const bodyParser =require('body-parser');
 
 const nodemailer =require('nodemailer');
 
+require('dotenv').config();
+
+
 const app =express();
 
 app.set('view engine','ejs');
@@ -48,7 +51,7 @@ app.post("/",function(req,res)
         service:'gmail',
         auth:{
             user: 'shriharshranjangupta@gmail.com',
-            pass: PASSWORDING,//password
+            pass: process.env.PASSWORDING,//password
 
         }
     })

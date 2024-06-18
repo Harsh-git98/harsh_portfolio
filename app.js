@@ -1,10 +1,48 @@
 const express =require('express');
 
 const bodyParser =require('body-parser');
-
+const axios = require('axios');
 const nodemailer =require('nodemailer');
 
 require('dotenv').config();
+
+
+
+
+
+
+
+
+
+
+
+// reloader
+
+// URL of the server itself
+const url = `https://harshranjan.onrender.com/`;
+
+// Interval in milliseconds (e.g., 5000ms = 5 seconds)
+const interval = 30000;
+
+function reloadWebsite() {
+  axios.get(url)
+    .then(response => {
+      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
+    })
+    .catch(error => {
+      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
+    });
+}
+
+// Set an interval to reload the website continuously
+setInterval(reloadWebsite, interval);
+
+
+
+
+
+
+
 
 
 const app =express();

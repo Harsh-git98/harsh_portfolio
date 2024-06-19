@@ -19,6 +19,8 @@ require('dotenv').config();
 // reloader
 
 // URL of the server itself
+const url1=`https://login-register-backend-ed24.onrender.com/`;
+const url2=`https://login-register-paralax.onrender.com/`;
 const url = `https://harshranjan.onrender.com/`;
 
 // Interval in milliseconds (e.g., 5000ms = 5 seconds)
@@ -34,11 +36,35 @@ function reloadWebsite() {
     });
 }
 
+
+function reloadWebsite1() {
+  axios.get(url1)
+    .then(response => {
+      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
+    })
+    .catch(error => {
+      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
+    });
+}
+
+function reloadWebsite2() {
+  axios.get(url2)
+    .then(response => {
+      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
+    })
+    .catch(error => {
+      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
+    });
+}
+
+
+
 // Set an interval to reload the website continuously
 setInterval(reloadWebsite, interval);
 
 
-
+setInterval(reloadWebsite1, interval);
+setInterval(reloadWebsite2, interval);
 
 
 

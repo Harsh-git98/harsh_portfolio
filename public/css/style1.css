@@ -9,6 +9,8 @@
   min-height: 50vh;
   display: flex;
   flex-direction: row;
+  align-content: center;
+  justify-content: center;
   border-radius: 25px;
   position: relative;
 
@@ -92,6 +94,26 @@ path {
   background-position:center;
   background-size:cover;
 }
+
+
+@media  (max-width:500px) {
+
+  .card-text{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+   
+  }
+  .portada{
+    min-height: 30vh;
+  }
+  
+  .title-total{
+    height: 100%;
+  }
+  
+}
+
+
 
 
 

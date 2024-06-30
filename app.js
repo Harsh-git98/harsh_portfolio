@@ -37,25 +37,25 @@ function reloadWebsite() {
 }
 
 
-function reloadWebsite1() {
-  axios.get(url1)
-    .then(response => {
-      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
-    })
-    .catch(error => {
-      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
-    });
-}
+// function reloadWebsite1() {
+//   axios.get(url1)
+//     .then(response => {
+//       console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
+//     })
+//     .catch(error => {
+//       console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
+//     });
+// }
 
-function reloadWebsite2() {
-  axios.get(url2)
-    .then(response => {
-      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
-    })
-    .catch(error => {
-      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
-    });
-}
+// function reloadWebsite2() {
+//   axios.get(url2)
+//     .then(response => {
+//       console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
+//     })
+//     .catch(error => {
+//       console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
+//     });
+// }
 
 
 
@@ -63,8 +63,8 @@ function reloadWebsite2() {
 setInterval(reloadWebsite, interval);
 
 
-setInterval(reloadWebsite1, interval);
-setInterval(reloadWebsite2, interval);
+// setInterval(reloadWebsite1, interval);
+// setInterval(reloadWebsite2, interval);
 
 
 

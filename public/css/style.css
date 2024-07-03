@@ -806,6 +806,7 @@ background: linear-gradient(180deg, rgba(31,21,189,1) 0%, rgba(49,42,173,1) 0%, 
   position: fixed;
   top: 50%;
   left: 50%;
+  min-width: 40vw;
   transform: translate(-50%, -50%);
   background-color: #0b1b4e;
   color: #1DA1F2;

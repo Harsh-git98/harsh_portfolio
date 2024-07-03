@@ -249,10 +249,7 @@
 
       <button type="submit" id="submitButton">Submit</button>
     </form>
-    <div id="popup">
-        <p id="popupMessage"></p>
-        <button id="popupClose">Close</button>
-    </div>
+   
 
 
     <p>
@@ -260,6 +257,10 @@
     
    
                 </div>
+                <div id="popup">
+                  <p id="popupMessage"></p>
+                  <button id="popupClose" onclick="">Close</button>
+              </div>
                    
                 </div>
                 <footer class="animated_footer_area">
@@ -322,42 +323,49 @@
 </script>
 
 <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
 
-            const submitButton = document.getElementById('submitButton');
-            submitButton.disabled = true; // Disable the button
+      const submitButton = document.getElementById('submitButton');
+      submitButton.disabled = true; // Disable the button
 
-            const formData = new FormData(this);
+      const formData = new FormData(this);
+      const formObject = {};
+      formData.forEach((value, key) => {
+          formObject[key] = value;
+      });
 
-            fetch(this.action, {
-                method: 'POST',
-                body: formData
-            }).then(response => {
-                if (response.ok) {
-                    showPopup('Form submitted successfully!');
-                } else {
-                    showPopup('Form submission failed.');
-                }
-                submitButton.disabled = false; // Re-enable the button
-            }).catch(error => {
-                console.error('Error:', error);
-                showPopup('An error occurred. Please try again.');
-                submitButton.disabled = false; // Re-enable the button
-            });
-        });
+      fetch('/', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formObject)
+      }).then(response => {
+          if (response.ok) {
+              showPopup('Form submitted \u2705 ');
+          } else {
+              showPopup('Failed \u274C');
+          }
+          submitButton.disabled = false; // Re-enable the button
+      }).catch(error => {
+          console.error('Error:', error);
+          showPopup('An error occurred. Please try again.');
+          submitButton.disabled = false; // Re-enable the button
+      });
+  });
 
-        function showPopup(message) {
-            const popup = document.getElementById('popup');
-            const popupMessage = document.getElementById('popupMessage');
-            popupMessage.textContent = message;
-            popup.style.display = 'block';
+  function showPopup(message) {
+      const popup = document.getElementById('popup');
+      const popupMessage = document.getElementById('popupMessage');
+      popupMessage.textContent = message;
+      popup.style.display = 'block';
 
-            document.getElementById('popupClose').addEventListener('click', function() {
-                popup.style.display = 'none';
-            });
-        }
-    </script>
+      document.getElementById('popupClose').addEventListener('click', function() {
+          popup.style.display = 'none';
+      });
+  }
+</script>
 
 
 <style>
@@ -391,28 +399,7 @@
  66%,100% {background-position: 100% 0,50% 50%,0    100%}
 }
 
-#popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: blue;
-            color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-        }
-        /* Styles for the close button */
-        #popupClose {
-            cursor: pointer;
-            background: #fff;
-            color: #000;
-            border: none;
-            padding: 5px 10px;
-            margin-top: 10px;
-        }
+
 </style>
 
 

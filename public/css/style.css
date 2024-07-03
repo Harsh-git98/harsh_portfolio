@@ -795,3 +795,38 @@ background: linear-gradient(180deg, rgba(31,21,189,1) 0%, rgba(49,42,173,1) 0%, 
   0% { left: -25%; }
   100% { left: 100%; }
 }
+
+
+
+#popup {
+  display: none;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0b1b4e;
+  color: #1DA1F2;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+/* Styles for the close button */
+#popupClose {
+  all: initial;
+  cursor: pointer;
+  background: #2196F3;
+  color: #000;
+  border: none;
+  border:#000 3px solid;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: 20px;
+  margin-left: auto;
+}
+#popupMessage{
+  text-align: center;
+}

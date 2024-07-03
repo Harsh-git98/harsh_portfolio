@@ -99,47 +99,48 @@ app.get('/project', (req, res) => {
     console.log('done loading');
 });
 
+app.use(bodyParser.json());
 
 
 
+// POST route for form submission
+app.post('/', function(req, res) {
+    const { name, email, message } = req.body;
 
-app.post("/",function(req,res)
-{
-
-    
-    const comm=req.body.message;
-    const comm1=req.body.name+req.body.email;
-
-
-    var transporter =nodemailer.createTransport({
-        service:'gmail',
-        auth:{
+    // Create transporter with Gmail service
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
             user: 'shriharshranjangupta@gmail.com',
-            pass: process.env.PASSWORDING,//password
-
+            pass: process.env.PASSWORDING // Use environment variable for password
         }
-    })
+    });
 
-    var mailOption={
-        from:'shriharshranjangupta@gmail.com',
+    // Email options
+    const mailOptions = {
+        from: 'shriharshranjangupta@gmail.com',
         to: 'hitrjn@gmail.com',
-        cc:req.body.email,
+        cc: email, // Use the provided email for CC
+        subject: `Thanks for your message, ${name}`, // Use the name as the subject
+        text: message // Use the message as the text content
+    };
 
-        subject:req.body.name,
-        text:req.body.message,
-
-    }
-    transporter.sendMail(mailOption, function(error,info){
-        if(error)
-            {
-                console.log(error);
-            }
-            else{
-                res.redirect('/');
-                console.log("email sent"+info.response);
-            }
+    // Send email
+    transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            console.error('Error sending email:', error);
+            res.status(500).send('Failed to send email');
+        } else {
+            console.log('Email sent:', info.response);
+            res.status(200).send('Email sent successfully');
+        }
     });
 });
+
+
+
+
+
 app.listen(3001, function(){
     console.log('Listening to port ${PORT}');
 });

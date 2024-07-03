@@ -235,7 +235,7 @@
                 <div class="container11">
   
     <div class="brand-title">More Curious??</div>
-    <form action="/" method="POST">
+    <form id="contactForm" action="/" method="POST">
     <div class="inputs">
       <label></label>
       <input type="text" name="name" id="name" placeholder="How may I address you?" required />
@@ -247,8 +247,14 @@
       <textarea required class="special" name="message" id="message" placeholder="Unlock a Friendly Chat: Say Hello !" maxength="300"></textarea>
 
 
-      <button type="submit">Submit</button>
+      <button type="submit" id="submitButton">Submit</button>
     </form>
+    <div id="popup">
+        <p id="popupMessage"></p>
+        <button id="popupClose">Close</button>
+    </div>
+
+
     <p>
     </div>
     
@@ -307,7 +313,52 @@
       }, 500); // Minimum 1 second delay
     });
 
+
+
+     
+
+
+
 </script>
+
+<script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const submitButton = document.getElementById('submitButton');
+            submitButton.disabled = true; // Disable the button
+
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    showPopup('Form submitted successfully!');
+                } else {
+                    showPopup('Form submission failed.');
+                }
+                submitButton.disabled = false; // Re-enable the button
+            }).catch(error => {
+                console.error('Error:', error);
+                showPopup('An error occurred. Please try again.');
+                submitButton.disabled = false; // Re-enable the button
+            });
+        });
+
+        function showPopup(message) {
+            const popup = document.getElementById('popup');
+            const popupMessage = document.getElementById('popupMessage');
+            popupMessage.textContent = message;
+            popup.style.display = 'block';
+
+            document.getElementById('popupClose').addEventListener('click', function() {
+                popup.style.display = 'none';
+            });
+        }
+    </script>
+
 
 <style>
 /* HTML: <div class="loader"></div> */
@@ -339,6 +390,29 @@
  0%,33%   {background-position: 0    0,50% 50%,100% 100%}
  66%,100% {background-position: 100% 0,50% 50%,0    100%}
 }
+
+#popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: blue;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        /* Styles for the close button */
+        #popupClose {
+            cursor: pointer;
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
 </style>
 
 

@@ -34,18 +34,23 @@
             color:#ffffff;
         }
         .project-main{
-            width:90vw;
+            width:100%
+            
         }
 
 
         .project-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             gap: 20px;
-            max-width: 600px;
+            margin: auto auto;
+            padding: 3vh 3vh 3vh 3vh;
+            overflow-x: auto; /* Enables horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Optional: Snap scrolling */
+            max-width: 95vw;
             width: 100%;
-            margin: 20px auto;
+            
         }
 
         .project-card {
@@ -56,26 +61,12 @@
             overflow: hidden;
             width: 100%;
             max-width: 600px;
+            min-width: 300px;
             transform: scale(0.9);
-            transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
             opacity: 0;
         }
 
-        .project-card:nth-child(4n+1) {
-            transform: translateX(100px);
-        }
-
-        .project-card:nth-child(4n+2) {
-            transform: translateX(-100px);
-        }
-
-        .project-card:nth-child(4n+3) {
-            transform: translateX(-100px);
-        }
-
-        .project-card:nth-child(4n+4) {
-            transform: translateX(100px);
-        }
+        
 
         .project-card img {
             width: 100%;
@@ -165,17 +156,9 @@
     <p>© Harsh Ranjan 2024. All rights reserved. </p>
 
     <div class="project-container">
+        
         <div class="project-card">
-            <img src="/img/portfolio.png" alt="Project 1">
-            <div class="project-content">
-                <h2>PortFolio Website</h2>
-                <p>A simple Portfolio Website Made Using express.Js and Node.JS</p>
-                <a href="https://github.com/Harsh-git98/harsh_portfolio" target="_blank">GitHub</a>
-                <a href="/" target="_blank">Demo</a>
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="/img/edcattend.png" alt="Project 2">
+            <img src="/img/edcattend.png" alt="Project 1">
             <div class="project-content">
                 <h2>EDC Attendance Tracker</h2>
                 <p>A simple web app to mark the attendance of EDC club members during meetings based on GPS location</p>
@@ -184,7 +167,52 @@
             </div>
         </div>
         <div class="project-card">
-            <img src="/img/todo.png" alt="Project 3">
+            <img src="/img/Dashboard.png" alt="Project 2">
+            <div class="project-content">
+                <h2>IT Classroom DashBoard</h2>
+                <p>React JS based Unified Classroom Dashboard with schedule, study materials, class info, and performance analytics</p>
+                <a href="https://github.com/Harsh-git98/Classroom-Dashboard-React" target="_blank">GitHub</a>
+                <a href="https://classroom-dashboard-react.vercel.app/" target="_blank">Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="/img/cafe_app.jpg" alt="Project 3">
+            <div class="project-content">
+                <h2>Cafe App</h2>
+                <p>React Native android app to showcase a cafe store with a sleek UI, splash screen, home page, and menu tab.                </p>
+                <a href="https://github.com/Harsh-git98/cafe_app" target="_blank">GitHub</a>
+                <a href="https://expo.dev/accounts/harshranjan98/projects/Cafe/builds/49c1f47b-884b-4528-8c9c-9537b7a0651a" target="_blank">Download</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="/img/archiver.jpg" alt="Project 4">
+            <div class="project-content">
+                <h2>Auto- Archiver</h2>
+                <p>shell script to archive files regularly.</p>
+                <a href="https://github.com/Harsh-git98/Auto-Archiver" target="_blank">GitHub</a>
+                  </div>
+        </div>
+        <div class="project-card">
+            <img src="/img/portfolio.png" alt="Project 5">
+            <div class="project-content">
+                <h2>PortFolio Website</h2>
+                <p>A simple Portfolio Website Made Using express.Js and Node.JS</p>
+                <a href="https://github.com/Harsh-git98/harsh_portfolio" target="_blank">GitHub</a>
+                <a href="/" target="_blank">Demo</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="/img/image.png" alt="Project 6">
+            <div class="project-content">
+                <h2>SocialLensblog.in</h2>
+                <p>A simple Website where anyone can read blog that is published by my Client.</p>
+                <a href="https://github.com/Harsh-git98/sociallensblog2" target="_blank">GitHub</a>
+                <a href="https://www.sociallensblog.in" target="_blank">Demo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="/img/todo.png" alt="Project 7">
             <div class="project-content">
                 <h2>To-Do-List</h2>
                 <p>A simple Webapp to List down things To-Do and instantly remove it. Made on Express and Node.</p>
@@ -193,18 +221,10 @@
             </div>
         </div>
 
-        <div class="project-card">
-            <img src="/img/image.png" alt="Project 3">
-            <div class="project-content">
-                <h2>SocialLensblog.in</h2>
-                <p>A simple Website where anyone can read blog that is published by my Client.</p>
-                <a href="https://github.com/Harsh-git98/sociallensblog2" target="_blank">GitHub</a>
-                <a href="https://www.sociallensblog.in" target="_blank">Demo</a>
-            </div>
-        </div>
+       
 
         <div class="project-card">
-            <img src="/img/login.png" alt="Project 2">
+            <img src="/img/login.png" alt="Project 8">
             <div class="project-content">
                 <h2>login - Signup</h2>
                 <p>This is simple login signup page that can be used in any other websites. It is full MERN STACK Project</p>
@@ -213,7 +233,7 @@
             </div>
         </div>
         <div class="project-card">
-            <img src="/img/anony.png" alt="Project 3">
+            <img src="/img/anony.png" alt="Project 9">
             <div class="project-content">
                 <h2>Anonymessager</h2>
                 <p>Single Page Ejs WebApp to Send me message Anonymously.</p>
